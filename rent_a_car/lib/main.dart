@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Rent A Car',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Rent A Car'),
     );
   }
 }
@@ -50,68 +50,161 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  // int _counter = 0;
+  //
+  // void _incrementCounter() {
+  //   setState(() {
+  //     // This call to setState tells the Flutter framework that something has
+  //     // changed in this State, which causes it to rerun the build method below
+  //     // so that the display can reflect the updated values. If we changed
+  //     // _counter without calling setState(), then the build method would not be
+  //     // called again, and so nothing would appear to happen.
+  //     _counter++;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body:
+      // Center is a layout widget. It takes a single child and positions it
+      // in the middle of the parent.
+      Column(
+
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+    Card(
+    clipBehavior: Clip.antiAlias,
+      child: Column(children: <Widget>[
+        ListTile(
+          title: Text('Car'),
+          subtitle: Text(
+            'CAr',
+            style: TextStyle(
+              color:Colors.red,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+          ),
+          trailing: Padding(
+            padding: const EdgeInsets.only(bottom: 8.0),
+            // child: Image(
+            //   //image: NetworkImage(car.supplierImage),
+            //   width: 70.0,
+            // ),
+          ),
+        ),
+        // CachedNetworkImage(
+        //   imageUrl: car.image,
+        //   placeholder: (context, url) => CircularProgressIndicator(),
+        //   errorWidget: (context, url, error) => Icon(Icons.error),
+        // ),
+        Row(
+          //Divider line
+          children: <Widget>[
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 20.0, right: 20.0, top: 10.0, bottom: 10.0),
+                child: Divider(color: Colors.red),
+              ),
             ),
           ],
         ),
+        Padding(
+          padding: EdgeInsets.only(bottom: 10.0, left: 20.0, right: 20.0),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 7,
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(Icons.card_travel),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Text(
+                        'car',
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Icon(
+                        Icons.person,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Text(
+                        'car',
+                        textAlign: TextAlign.left,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Icon(
+                        Icons.tune,
+                      ),
+                      SizedBox(
+                        width: 5.0,
+                      ),
+                      Text(
+                        'car',
+                        textAlign: TextAlign.left,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 4,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      // padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'car',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                            fontSize: 22.0, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Container(
+                      //color: Colors.red,
+                      // padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        'Total',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 14.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ]
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    )
+
+
+// This trailing comma makes auto-formatting nicer for build methods.
+        ]
+      )
+
+
     );
   }
 }
